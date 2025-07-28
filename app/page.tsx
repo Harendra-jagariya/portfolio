@@ -343,341 +343,394 @@ export default function Portfolio() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
+    <div className="min-h-screen from-gray-900/50 to-black/50 backdrop-blur-sm overflow-x-hidden relative">
       <CursorWave />
 
-      {/* Animated Background Gradient */}
-      <div className="fixed inset-0 opacity-40">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-900/30 to-cyan-900/30" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-purple-800/20 via-blue-800/20 to-cyan-800/20" />
+      {/* Enhanced Animated Background Gradient - Hostinger Style */}
+      <div className="fixed inset-0 opacity-50">
+        {/* Base gradient foundation */}
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/90 via-purple-950/80 to-cyan-950/70" />
+
+        {/* Dynamic color shifting overlay */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-bl from-pink-800/10 via-violet-800/10 to-indigo-800/10"
+          className="absolute inset-0"
           animate={{
             background: [
-              "linear-gradient(45deg, rgba(219, 39, 119, 0.1), rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1))",
-              "linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1), rgba(245, 158, 11, 0.1))",
-              "linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(239, 68, 68, 0.1), rgba(219, 39, 119, 0.1))",
-              "linear-gradient(180deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1))",
+              "linear-gradient(45deg, rgba(139, 92, 246, 0.15), rgba(59, 130, 246, 0.12), rgba(16, 185, 129, 0.10))",
+              "linear-gradient(90deg, rgba(219, 39, 119, 0.15), rgba(139, 92, 246, 0.12), rgba(59, 130, 246, 0.10))",
+              "linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(219, 39, 119, 0.12), rgba(139, 92, 246, 0.10))",
+              "linear-gradient(180deg, rgba(16, 185, 129, 0.15), rgba(245, 158, 11, 0.12), rgba(219, 39, 119, 0.10))",
             ],
           }}
-          transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        />
+
+        {/* Subtle animated orbs */}
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3],
+            x: [0, 50, 0],
+            y: [0, -30, 0],
+          }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.5, 0.2],
+            x: [0, -40, 0],
+            y: [0, 40, 0],
+          }}
+          transition={{ duration: 10, repeat: Infinity }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 w-72 h-72 bg-pink-500/10 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.4, 0.7, 0.4],
+            rotate: [0, 180, 360],
+          }}
+          transition={{ duration: 12, repeat: Infinity }}
         />
       </div>
 
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center">
+      {/* Hero Section - Re-envisioned for elegance and attractiveness */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm relative">
+        {/* Modern Gradient Background - Directly on section for better blend */}
         <div className="absolute inset-0 z-0">
-          <Canvas camera={{ position: [0, 0, 10], fov: 75 }}>
-            <Suspense fallback={null}>
-              <Scene3D />
-            </Suspense>
-          </Canvas>
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-blue-900/70 to-cyan-800/60" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-pink-600/30 via-purple-700/40 to-blue-600/50" />
+
+          <motion.div
+            className="absolute inset-0"
+            animate={{
+              background: [
+                "radial-gradient(ellipse at 20% 50%, rgba(139, 92, 246, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(59, 130, 246, 0.3) 0%, transparent 50%), radial-gradient(ellipse at 40% 80%, rgba(16, 185, 129, 0.3) 0%, transparent 50%)",
+                "radial-gradient(ellipse at 60% 30%, rgba(219, 39, 119, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 30% 70%, rgba(139, 92, 246, 0.3) 0%, transparent 50%), radial-gradient(ellipse at 70% 20%, rgba(59, 130, 246, 0.3) 0%, transparent 50%)",
+              ],
+            }}
+            transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+          />
         </div>
 
-        <motion.div
-          className="relative z-20 text-center px-4 max-w-7xl mx-auto"
-          style={{ y, opacity }}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          {/* Greeting Animation */}
-          <motion.div
-            className="mb-8"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-blue-400/30 backdrop-blur-sm">
-              <motion.div
-                animate={{ rotate: [0, 80, 0] }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                className="text-2xl"
-              >
-                👋
-              </motion.div>
-              <span className="text-lg font-medium text-blue-200">Hello, I'm</span>
-            </div>
-          </motion.div>
+        {/* Centered Content and Image Container */}
+        <div className="relative z-20 w-full h-full flex flex-col items-center justify-center px-6 lg:px-8">
+          <div className="relative w-full max-w-[100rem] h-full flex flex-col lg:flex-row items-center justify-center">
 
-          {/* Enhanced Creative Name Animation */}
-          <div className="mb-6 relative">
-            {/* Decorative Background Elements */}
+            {/* Main Profile Image - Central and Prominent */}
             <motion.div
-              className="absolute -inset-32 opacity-10"
-              animate={{
-                rotate: [0, 360],
-                scale: [1, 1.2, 1],
-              }}
-              transition={{ duration: 25, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+              className="relative order-2 lg:order-1 w-full max-w-lg h-full max-h-[650px] lg:max-h-[750px] flex items-center justify-center z-10"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.5, delay: 0.5, type: "spring", stiffness: 100 }}
             >
-              <div className="w-full h-full border-2 border-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
-            </motion.div>
-
-            <motion.div
-              className="text-[clamp(2.5rem,8vw,7rem)] font-black mb-5 relative leading-tight text-center whitespace-nowrap"
-              initial={{ scale: 0.5, rotateX: -90, opacity: 0 }}
-              animate={{ scale: 1, rotateX: 0, opacity: 1 }}
-              transition={{ duration: 1.8, delay: 0.8, type: "spring", stiffness: 80 }}
-            >
-              <motion.span
-                className="inline-block relative"
-                whileHover={{ scale: 1.03, rotateY: 3 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                {/* Soft glow layer */}
-                <span className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent blur-md opacity-30">
-                  HARENDRA SHARMA
-                </span>
-
-                {/* Foreground crisp text */}
-                <span className="relative bg-gradient-to-r from-blue-300 via-purple-400 to-cyan-300 bg-clip-text text-transparent font-extrabold tracking-tight">
-                  HARENDRA SHARMA
-                </span>
-
-                {/* Animated underline */}
-                <motion.div
-                  className="absolute -bottom-3 left-0 h-1.5 bg-gradient-to-r from-blue-500 via-purple-600 to-cyan-500 rounded-full"
-                  initial={{ width: 0, opacity: 0 }}
-                  animate={{ width: "100%", opacity: 1 }}
-                  transition={{ duration: 1.2, delay: 2.5 }}
+              <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl  from-blue-400 via-purple-500 to-cyan-400">
+                <Image
+                  src="/images/profile.png"
+                  alt="Harendra Sharma - Senior Software Engineer"
+                  fill
+                  className="object-cover object-center"
                 />
-              </motion.span>
-            </motion.div>
-            {/* Enhanced Decorative Elements */}
-            <motion.div
-              className="absolute -top-12 -left-12 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-70"
-              animate={{
-                scale: [1, 1.4, 1],
-                rotate: [0, 180, 360],
-                x: [0, 15, 0],
-                y: [0, -15, 0],
-              }}
-              transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
-            />
-            <motion.div
-              className="absolute -bottom-12 -right-12 w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full opacity-70"
-              animate={{
-                scale: [1, 1.5, 1],
-                rotate: [360, 180, 0],
-                x: [0, -20, 0],
-                y: [0, 20, 0],
-              }}
-              transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
-            />
-            <motion.div
-              className="absolute top-1/3 -right-16 w-8 h-8 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full opacity-60"
-              animate={{
-                scale: [1, 1.3, 1],
-                rotate: [0, 360],
-                x: [0, 25, 0],
-              }}
-              transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY }}
-            />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+              </div>
 
-            {/* Floating Code Symbols */}
-            <motion.div
-              className="absolute -top-20 left-1/4 text-3xl text-blue-400 opacity-50 font-mono"
-              animate={{
-                y: [0, -25, 0],
-                rotate: [0, 15, 0],
-              }}
-              transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
-            >
-              {"</>"}
+              {/* Floating Tech Icons around the main image */}
+              <motion.div
+                className="absolute -top-4 -right-4 w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg z-20"
+                animate={{ rotate: 360, scale: [1, 1.1, 1] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+              >
+                <Code className="w-7 h-7 text-white" />
+              </motion.div>
+
+              <motion.div
+                className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg z-20"
+                animate={{ rotate: -360, scale: [1, 1.05, 1] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+              >
+                <Database className="w-8 h-8 text-white" />
+              </motion.div>
+
+              <motion.div
+                className="absolute top-1/3 -right-6 w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg z-20"
+                animate={{ y: [-8, 8, -8], scale: [1, 1.1, 1] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Globe className="w-6 h-6 text-white" />
+              </motion.div>
             </motion.div>
+
+            {/* Left Side Content - Positioned relative to image for flow */}
+            <div className="order-1 lg:order-2 flex-grow flex flex-col justify-end items-center lg:items-end p-4 lg:p-0 lg:pr-12 text-center lg:text-right">
+              {/* Greeting */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                <div className="w-fit lg:w-auto mx-auto lg:ml-auto flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-blue-400/30 backdrop-blur-sm mb-6">
+                  <motion.div
+                    animate={{ rotate: [0, 80, 0] }}
+                    transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                    className="text-2xl"
+                  >
+                    👋
+                  </motion.div>
+                  <span className="text-lg font-medium text-blue-200">Hello, I'm</span>
+                </div>
+              </motion.div>
+
+              {/* Name */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 1 }}
+              >
+                <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-black leading-tight whitespace-nowrap">
+                  <span className="bg-gradient-to-r from-blue-300 via-purple-400 to-cyan-300 bg-clip-text text-transparent">
+                    HARENDRA SHARMA
+                  </span>
+                </h1>
+                <motion.div
+                  className="h-1.5 bg-gradient-to-r from-blue-500 via-purple-600 to-cyan-500 rounded-full mt-4 mx-auto lg:ml-auto"
+                  initial={{ width: 0 }}
+                  animate={{ width: "85%" }}
+                  transition={{ duration: 1.2, delay: 1.8 }}
+                />
+              </motion.div>
+
+              {/* Title & Description */}
+              <motion.div
+                className="space-y-4 my-6"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 1.3 }}
+              >
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  Senior Software Engineer
+                </h2>
+                <p className="text-lg md:text-xl lg:text-2xl text-gray-200 font-light leading-relaxed">
+                  Crafting{" "}
+                  <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text font-semibold">
+                    AI-powered digital experiences
+                  </span>{" "}
+                  that bridge{" "}
+                  <span className="text-transparent bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text font-semibold">
+                    innovation
+                  </span>{" "}
+                  and{" "}
+                  <span className="text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text font-semibold">
+                    intelligent automation
+                  </span>
+                </p>
+              </motion.div>
+
+              {/* Stats */}
+              <motion.div
+                className="flex flex-wrap justify-center lg:justify-end gap-6 lg:gap-8 mb-6"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 1.6 }}
+              >
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-black bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2">
+                    7+
+                  </div>
+                  <div className="text-xs md:text-sm text-gray-400 font-medium">Years Experience</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-black bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
+                    15+
+                  </div>
+                  <div className="text-xs md:text-sm text-gray-400 font-medium">Projects Delivered</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2">
+                    5
+                  </div>
+                  <div className="text-xs md:text-sm text-gray-400 font-medium">Global Enterprises</div>
+                </div>
+              </motion.div>
+
+              {/* CTA Button */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 1.9 }}
+              >
+                <motion.button
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/HarendraSharma.pdf';
+                    link.download = 'HarendraSharma.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex cursor-pointer items-center justify-center h-12 lg:h-14 px-6 lg:px-8 text-base lg:text-lg font-semibold bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white rounded-2xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-500"
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Download Resume
+                </motion.button>
+              </motion.div>
+
+
+            </div>
+
+            {/* 3D Scene as a subtle background to the entire banner for depth */}
+            <div className="absolute inset-0 rounded-3xl overflow-hidden opacity-20 pointer-events-none">
+              <Canvas camera={{ position: [0, 0, 10], fov: 75 }}>
+                <Suspense fallback={null}>
+                  <Scene3D />
+                </Suspense>
+              </Canvas>
+            </div>
+          </div>
+        </div>
+
+        {/* Creative "AI Assistant" Button - Right Corner */}
+        <motion.div
+          className="fixed top-6 right-6 z-50 group cursor-pointer"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 2.5, type: "spring", stiffness: 200 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <div className="relative">
+            {/* Main Button */}
+            <div className="relative px-6 py-4 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 rounded-2xl border border-white/20 shadow-2xl backdrop-blur-sm">
+              {/* Animated glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 rounded-2xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+
+              {/* Content */}
+              <div className="relative flex items-center gap-3">
+                {/* Animated Robot Icon */}
+                <motion.div
+                  className="text-2xl"
+                  animate={{
+                    rotate: [0, 10, -10, 0],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  🤖
+                </motion.div>
+
+                {/* Text */}
+                <div className="flex flex-col">
+                  <span className="text-white font-bold text-sm leading-tight">AI Assistant</span>
+                  <span className="text-purple-200 text-xs font-medium">Ask About ME!</span>
+                </div>
+
+                {/* Sparkle Effect */}
+                <motion.div
+                  className="text-yellow-300 text-sm"
+                  animate={{
+                    rotate: [0, 180, 360],
+                    scale: [1, 1.2, 1]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                >
+                  ✨
+                </motion.div>
+              </div>
+
+              {/* Pulsing border effect */}
+              <motion.div
+                className="absolute inset-0 border-2 border-white/30 rounded-2xl"
+                animate={{
+                  scale: [1, 1.05, 1],
+                  opacity: [0.3, 0.6, 0.3]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+            </div>
+
+            {/* Notification Dot */}
             <motion.div
-              className="absolute -bottom-20 right-1/4 text-2xl text-purple-400 opacity-50 font-mono"
+              className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-orange-400 to-red-500 rounded-full border-2 border-white shadow-lg flex items-center justify-center"
               animate={{
-                y: [0, 25, 0],
-                rotate: [0, -15, 0],
+                scale: [1, 1.2, 1],
+                rotate: [0, 5, -5, 0]
               }}
-              transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
             >
-              {"{}"}
+              <span className="text-white text-xs font-bold">!</span>
             </motion.div>
+
+            {/* Floating particles */}
+            {[...Array(3)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-2 h-2 bg-purple-400 rounded-full"
+                style={{
+                  top: `${20 + i * 10}%`,
+                  right: `${15 + i * 5}%`,
+                }}
+                animate={{
+                  y: [-10, -20, -10],
+                  opacity: [0.7, 1, 0.7],
+                  scale: [0.8, 1.2, 0.8],
+                }}
+                transition={{
+                  duration: 2 + i * 0.5,
+                  repeat: Infinity,
+                  delay: i * 0.3,
+                  ease: "easeInOut"
+                }}
+              />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 3 }}
+        >
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-sm text-gray-300 font-medium animate-pulse">Scroll to explore</span>
             <motion.div
-              className="absolute top-1/4 -left-20 text-xl text-cyan-400 opacity-40 font-mono"
-              animate={{
-                x: [0, -15, 0],
-                rotate: [0, 10, 0],
-              }}
-              transition={{ duration: 3.5, repeat: Number.POSITIVE_INFINITY }}
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.6, repeat: Infinity }}
+              className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center"
             >
-              {"()"}
+              <motion.div
+                animate={{ y: [0, 12, 0] }}
+                transition={{ duration: 1.6, repeat: Infinity }}
+                className="w-1 h-3 bg-gradient-to-b from-blue-400 to-purple-500 rounded-full mt-2"
+              />
             </motion.div>
           </div>
-
-          {/* Enhanced Title with Tagline */}
-          <motion.div
-            className="mb-8"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 2 }}
-          >
-            <motion.h2
-              className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent leading-tight"
-              whileHover={{ scale: 1.02 }}
-            >
-              Senior Software Engineer
-            </motion.h2>
-
-            <motion.p
-              className="text-xl md:text-3xl lg:text-4xl text-gray-200 font-light mb-8 leading-relaxed max-w-15xl mx-auto mt-20"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2.5 }}
-            >
-              Crafting{" "}
-              <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text font-semibold">
-                AI-powered digital experiences
-              </span>{" "}
-              that bridge{" "}
-              <span className="text-transparent bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text font-semibold">
-                innovation
-              </span>{" "}
-              and{" "}
-              <span className="text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text font-semibold">
-                intelligent automation
-              </span>
-            </motion.p>
-
-            <motion.div
-              className="flex flex-wrap items-center justify-center gap-4 text-base md:text-lg text-gray-300 max-w-8xl mx-auto"
-              whileHover={{ scale: 1.01 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 2.8 }}
-            >
-              <div className="flex items-center gap-2 px-4 py-2 bg-blue-500/10 rounded-full border border-blue-400/20">
-                <Code className="w-5 h-5 text-blue-400" />
-                <span className="font-semibold text-blue-200">React.js Expert</span>
-              </div>
-              <div className="w-2 h-2 bg-purple-500 rounded-full" />
-              <div className="flex items-center gap-2 px-4 py-2 bg-purple-500/10 rounded-full border border-purple-400/20">
-                <span className="font-semibold text-purple-200">7+ Years</span>
-              </div>
-              <div className="w-2 h-2 bg-cyan-400 rounded-full" />
-              <div className="flex items-center gap-2 px-4 py-2 bg-cyan-500/10 rounded-full border border-cyan-400/20">
-                <span className="font-semibold text-cyan-200">Enterprise Solutions</span>
-              </div>
-              <div className="w-2 h-2 bg-yellow-400 rounded-full" />
-              <div className="flex items-center gap-2 px-4 py-2 bg-yellow-500/10 rounded-full border border-yellow-400/20">
-                <span className="font-semibold text-yellow-200">Microfrontends</span>
-              </div>
-              <div className="w-2 h-2 bg-pink-500 rounded-full" />
-              <div className="flex items-center gap-2 px-4 py-2 bg-pink-500/10 rounded-full border border-pink-400/20">
-                <span className="font-semibold text-pink-200">Test Automation</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full border border-emerald-400/20">
-                <span className="font-semibold text-emerald-200">AI Integration</span>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Enhanced Stats */}
-          <motion.div
-            className="grid grid-cols-3 gap-8 mb-12 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 3.2 }}
-          >
-            <motion.div
-              className="text-center group cursor-pointer"
-              whileHover={{ scale: 1.15, y: -8 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <div className="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2">
-                7+
-              </div>
-              <div className="text-sm md:text-base text-gray-400 group-hover:text-gray-200 transition-colors font-medium">
-                Years of Excellence
-              </div>
-            </motion.div>
-            <motion.div
-              className="text-center group cursor-pointer"
-              whileHover={{ scale: 1.15, y: -8 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <div className="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
-                15+
-              </div>
-              <div className="text-sm md:text-base text-gray-400 group-hover:text-gray-200 transition-colors font-medium">
-                Projects Delivered
-              </div>
-            </motion.div>
-            <motion.div
-              className="text-center group cursor-pointer"
-              whileHover={{ scale: 1.15, y: -8 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <div className="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2">
-                5
-              </div>
-              <div className="text-sm md:text-base text-gray-400 group-hover:text-gray-200 transition-colors font-medium">
-                Global Enterprises
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Enhanced CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 3.6 }}
-            className="flex gap-6 justify-center flex-wrap max-w-4xl mx-auto"
-          >
-            <div className="w-72"> {/* Wrapper controls the width */}
-              <motion.a
-                href="/HarendraSharma.pdf"
-                download
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                className="group relative flex justify-center items-center h-12 text-base font-semibold bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white rounded-2xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 px-6 w-full"
-              >
-                {/* Shine animation */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "100%" }}
-                  transition={{ duration: 0.6 }}
-                />
-
-                <Download className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300 z-10" />
-                <span className="z-10">Download Resume</span>
-              </motion.a>
-            </div>
-          </motion.div>
-
-          {/* Scroll Indicator - Fixed at Bottom */}
-          <motion.div
-            className="fixed mt-20 left-1/2 transform -translate-x-1/2 z-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 4 }}
-          >
-            <div className="flex flex-col items-center gap-2">
-              <span className="text-sm text-gray-300 font-medium animate-pulse">
-                Scroll to explore
-              </span>
-
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 1.6, repeat: Infinity }}
-                className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center"
-              >
-                <motion.div
-                  animate={{ y: [0, 12, 0] }}
-                  transition={{ duration: 1.6, repeat: Infinity }}
-                  className="w-1 h-3 bg-gradient-to-b from-blue-400 to-purple-500 rounded-full mt-2"
-                />
-              </motion.div>
-            </div>
-          </motion.div>
         </motion.div>
       </section>
 
-      {/* About Section */}
+      {/* About Section - Enhanced without an image */}
       <section className="py-20 px-4 bg-gradient-to-b from-black/50 to-gray-900/50 backdrop-blur-sm relative">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -690,113 +743,100 @@ export default function Portfolio() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               About Me
             </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Dive deeper into my professional journey and discover the passion behind my work in software engineering and AI.
+            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-              <Image
-                src="/images/harendra-profile.jpg"
-                alt="Harendra Sharma - Senior Software Engineer"
-                width={400}
-                height={400}
-                className="relative rounded-2xl object-cover shadow-2xl group-hover:shadow-3xl transition-shadow duration-300"
-              />
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="space-y-8 p-8 bg-gray-800/60 rounded-3xl border border-gray-700 shadow-xl"
+          >
+            <p className="text-lg text-gray-300 leading-relaxed">
+              Results-driven **Senior Frontend Engineer** with{" "}
+              <span className="text-cyan-400 font-semibold">7+ years</span> of experience designing, developing, and
+              optimizing responsive, scalable web/mobile applications. My expertise spans React.js, TypeScript, microfrontend
+              architecture, and automated testing, ensuring robust and high-performing solutions.
+            </p>
+            <p className="text-lg text-gray-300 leading-relaxed">
+              I have a proven track record of delivering enterprise-grade solutions for global clients like{" "}
+              <span className="text-purple-400 font-semibold">Burberry</span>,{" "}
+              <span className="text-blue-400 font-semibold">Atlassian</span>, and{" "}
+              <span className="text-green-400 font-semibold">Sherwin-Williams</span>. I excel in cross-functional
+              collaboration, ensuring accessibility (WCAG) compliance, and am deeply passionate about writing clean,
+              efficient code and crafting user-first interfaces that deliver exceptional experiences.
+            </p>
+            <p className="text-lg text-gray-300 leading-relaxed">
+              Looking towards the future, I specialize in integrating{" "}
+              <span className="text-emerald-400 font-semibold">AI/ML capabilities</span> into modern applications.
+              From implementing chatbots and sophisticated recommendation systems to building intelligent user interfaces
+              with cutting-edge technologies like{" "}
+              <span className="text-violet-400 font-semibold">OpenAI APIs</span> and{" "}
+              <span className="text-amber-400 font-semibold">LangChain</span>, I bridge the gap between traditional
+              web development and advanced artificial intelligence, creating innovative and intelligent digital products.
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <p className="text-lg text-gray-300 leading-relaxed">
-                Results-driven Senior Frontend Engineer with{" "}
-                <span className="text-cyan-400 font-semibold">7+ years</span> of experience designing, developing, and
-                optimizing responsive, scalable web/mobile applications. Expert in React.js, TypeScript, microfrontend
-                architecture, and automated testing.
-              </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                Proven track record delivering enterprise-grade solutions for global clients like{" "}
-                <span className="text-purple-400 font-semibold">Burberry</span>,{" "}
-                <span className="text-blue-400 font-semibold">Atlassian</span>, and{" "}
-                <span className="text-green-400 font-semibold">Sherwin-Williams</span>. Adept at cross-functional
-                collaboration, accessibility (WCAG), passionate about clean code, performance, and user-first
-                interfaces.
-              </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                Passionate about the future of web development, I specialize in integrating{" "}
-                <span className="text-emerald-400 font-semibold">AI/ML capabilities</span> into modern applications.
-                From implementing chatbots and recommendation systems to building intelligent user interfaces with{" "}
-                <span className="text-violet-400 font-semibold">OpenAI APIs</span> and{" "}
-                <span className="text-amber-400 font-semibold">LangChain</span>, I bridge the gap between traditional
-                web development and cutting-edge artificial intelligence.
-              </p>
+            {/* Key Highlights */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-6">
+              <motion.div
+                className="flex flex-col items-center p-4 bg-gray-800/50 rounded-lg border border-gray-700"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(55, 65, 81, 0.7)", borderColor: "#6d28d9" }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Award className="w-8 h-8 text-yellow-400 mb-2" />
+                <span className="text-sm md:text-base text-gray-300 text-center font-medium">Enterprise Solutions</span>
+              </motion.div>
+              <motion.div
+                className="flex flex-col items-center p-4 bg-gray-800/50 rounded-lg border border-gray-700"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(55, 65, 81, 0.7)", borderColor: "#059669" }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Users className="w-8 h-8 text-green-400 mb-2" />
+                <span className="text-sm md:text-base text-gray-300 text-center font-medium">Team Leadership</span>
+              </motion.div>
+              <motion.div
+                className="flex flex-col items-center p-4 bg-gray-800/50 rounded-lg border border-gray-700"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(55, 65, 81, 0.7)", borderColor: "#3b82f6" }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <TrendingUp className="w-8 h-8 text-blue-400 mb-2" />
+                <span className="text-sm md:text-base text-gray-300 text-center font-medium">Performance Optimization</span>
+              </motion.div>
+              <motion.div
+                className="flex flex-col items-center p-4 bg-gray-800/50 rounded-lg border border-gray-700"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(55, 65, 81, 0.7)", borderColor: "#ef4444" }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Heart className="w-8 h-8 text-red-400 mb-2" />
+                <span className="text-sm md:text-base text-gray-300 text-center font-medium">Passion-Driven Dev</span>
+              </motion.div>
+            </div>
 
-              {/* Key Highlights */}
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <motion.div
-                  className="flex items-center gap-2 p-3 bg-gray-800/50 rounded-lg"
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(55, 65, 81, 0.7)" }}
-                >
-                  <Award className="w-5 h-5 text-yellow-400" />
-                  <span className="text-sm text-gray-300">Enterprise Solutions</span>
+            <div className="flex flex-wrap gap-3 pt-4 justify-center">
+              {[
+                "React Expert",
+                "TypeScript Pro",
+                "Microfrontends",
+                "Performance Optimizer",
+                "Team Leader",
+                "WCAG Compliance",
+                "AI Integration",
+                "OpenAI Expert",
+              ].map((badge, index) => (
+                <motion.div key={badge} whileHover={{ scale: 1.1, rotate: 2 }} whileTap={{ scale: 0.95 }}>
+                  <Badge
+                    variant="secondary"
+                    className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 px-4 py-2 hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300 cursor-pointer text-sm"
+                  >
+                    {badge}
+                  </Badge>
                 </motion.div>
-                <motion.div
-                  className="flex items-center gap-2 p-3 bg-gray-800/50 rounded-lg"
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(55, 65, 81, 0.7)" }}
-                >
-                  <Users className="w-5 h-5 text-green-400" />
-                  <span className="text-sm text-gray-300">Team Leadership</span>
-                </motion.div>
-                <motion.div
-                  className="flex items-center gap-2 p-3 bg-gray-800/50 rounded-lg"
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(55, 65, 81, 0.7)" }}
-                >
-                  <TrendingUp className="w-5 h-5 text-blue-400" />
-                  <span className="text-sm text-gray-300">Performance Optimization</span>
-                </motion.div>
-                <motion.div
-                  className="flex items-center gap-2 p-3 bg-gray-800/50 rounded-lg"
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(55, 65, 81, 0.7)" }}
-                >
-                  <Heart className="w-5 h-5 text-red-400" />
-                  <span className="text-sm text-gray-300">Family & Code Balance</span>
-                </motion.div>
-              </div>
-
-              <div className="flex flex-wrap gap-3 pt-4">
-                {[
-                  "React Expert",
-                  "TypeScript Pro",
-                  "Microfrontends",
-                  "Performance Optimizer",
-                  "Team Leader",
-                  "WCAG Compliance",
-                  "AI Integration",
-                  "OpenAI Expert",
-                ].map((badge, index) => (
-                  <motion.div key={badge} whileHover={{ scale: 1.1, rotate: 2 }} whileTap={{ scale: 0.95 }}>
-                    <Badge
-                      variant="secondary"
-                      className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 px-3 py-1 hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300 cursor-pointer"
-                    >
-                      {badge}
-                    </Badge>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -906,50 +946,51 @@ export default function Portfolio() {
                     <div className="flex flex-col md:flex-row gap-6 mb-8">
                       <div className="md:w-1/3">
                         <div className="flex items-center gap-3 mb-4">
-                          <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }}>
-                            <Building className="w-6 h-6 text-purple-400" />
+                          <motion.div
+                            whileHover={{ rotate: 360 }}
+                            transition={{ duration: 0.6 }}
+                          >
+                            <Building className="w-8 h-8 text-purple-400" />
                           </motion.div>
-                          <h3 className="text-2xl font-bold text-white group-hover:text-purple-200 transition-colors duration-300">
+                          <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
                             {exp.company}
                           </h3>
                         </div>
-                        <p className="text-purple-300 font-semibold mb-2 group-hover:text-purple-200 transition-colors duration-300">
-                          {exp.position}
-                        </p>
-                        <div className="flex items-center gap-2 text-gray-400 mb-4 group-hover:text-gray-300 transition-colors duration-300">
+                        <p className="text-xl text-cyan-400 font-semibold mb-2">{exp.position}</p>
+                        <div className="flex items-center gap-2 text-gray-400 mb-2">
                           <Calendar className="w-4 h-4" />
-                          <span>{exp.duration}</span>
+                          <span className="text-sm">{exp.duration}</span>
                         </div>
-                        <div className="flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                        <div className="flex items-center gap-2 text-gray-400">
                           <MapPin className="w-4 h-4" />
-                          <span>{exp.location}</span>
+                          <span className="text-sm">{exp.location}</span>
                         </div>
                       </div>
 
-                      <div className="md:w-2/3 space-y-6">
-                        {exp.projects.map((project, projectIndex) => (
-                          <motion.div
-                            key={projectIndex}
-                            className="border-l-2 border-purple-500/30 pl-6 hover:border-purple-400 transition-colors duration-300"
-                            whileHover={{ x: 10 }}
-                          >
-                            <h4 className="text-lg font-semibold text-white mb-2 flex items-center gap-2">
-                              {project.name}
-                              <motion.div whileHover={{ scale: 1.2 }}>
-                                <ExternalLink className="w-4 h-4 text-purple-400" />
-                              </motion.div>
-                            </h4>
-                            <p className="text-sm text-purple-300 mb-3">{project.duration}</p>
-                            <ul className="space-y-2 text-gray-300">
-                              {project.achievements.map((achievement, achIndex) => (
-                                <motion.li key={achIndex} className="flex items-start gap-2" whileHover={{ x: 5 }}>
-                                  <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
-                                  <span className="hover:text-white transition-colors duration-300">{achievement}</span>
-                                </motion.li>
-                              ))}
-                            </ul>
-                          </motion.div>
-                        ))}
+                      <div className="md:w-2/3">
+                        <div className="space-y-6">
+                          {exp.projects.map((project, projectIndex) => (
+                            <motion.div
+                              key={projectIndex}
+                              className="bg-gray-800/30 rounded-lg p-6 border border-gray-700/50 hover:border-purple-500/30 transition-all duration-300"
+                              whileHover={{ scale: 1.02, backgroundColor: "rgba(55, 65, 81, 0.4)" }}
+                            >
+                              <h4 className="text-lg font-semibold text-blue-300 mb-2">{project.name}</h4>
+                              <p className="text-sm text-gray-400 mb-4">{project.duration}</p>
+                              <ul className="space-y-2">
+                                {project.achievements.map((achievement, achievementIndex) => (
+                                  <li key={achievementIndex} className="flex items-start gap-2 text-gray-300">
+                                    <motion.div
+                                      className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mt-2 flex-shrink-0"
+                                      whileHover={{ scale: 1.5 }}
+                                    />
+                                    <span className="text-sm leading-relaxed">{achievement}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </motion.div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </CardContent>
@@ -959,9 +1000,7 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
-
-      {/* Contact Section */}
-      <section className="py-20 px-4 bg-black/50 backdrop-blur-sm">
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-900/50 to-black/50 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -1098,7 +1137,7 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 bg-gray-900/80 border-t border-gray-800 backdrop-blur-sm">
+      <footer className="py-8 px-4  from-gray-900/50 to-black/50 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto text-center">
           <motion.p
             className="text-gray-400 hover:text-gray-300 transition-colors duration-300"
