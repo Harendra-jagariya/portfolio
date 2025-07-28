@@ -583,14 +583,7 @@ export default function Portfolio() {
 
             </div>
 
-            {/* 3D Scene as a subtle background to the entire banner for depth */}
-            <div className="absolute inset-0 rounded-3xl overflow-hidden opacity-20 pointer-events-none">
-              <Canvas camera={{ position: [0, 0, 10], fov: 75 }}>
-                <Suspense fallback={null}>
-                  <Scene3D />
-                </Suspense>
-              </Canvas>
-            </div>
+
           </div>
         </div>
 
