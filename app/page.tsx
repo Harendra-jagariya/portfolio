@@ -604,82 +604,8 @@ export default function Portfolio() {
           whileTap={{ scale: 0.95 }}
         >
           <div className="relative">
-            {/* Main Button */}
-            <div className="relative px-6 py-4 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 rounded-2xl border border-white/20 shadow-2xl backdrop-blur-sm">
-              {/* Animated glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 rounded-2xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
 
-              {/* Content */}
-              <div className="relative flex items-center gap-3">
-                {/* Animated Robot Icon */}
-                <motion.div
-                  className="text-2xl"
-                  animate={{
-                    rotate: [0, 10, -10, 0],
-                    scale: [1, 1.1, 1]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  🤖
-                </motion.div>
 
-                {/* Text */}
-                <div className="flex flex-col">
-                  <span className="text-white font-bold text-sm leading-tight">AI Assistant</span>
-                  <span className="text-purple-200 text-xs font-medium">Ask About ME!</span>
-                </div>
-
-                {/* Sparkle Effect */}
-                <motion.div
-                  className="text-yellow-300 text-sm"
-                  animate={{
-                    rotate: [0, 180, 360],
-                    scale: [1, 1.2, 1]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                >
-                  ✨
-                </motion.div>
-              </div>
-
-              {/* Pulsing border effect */}
-              <motion.div
-                className="absolute inset-0 border-2 border-white/30 rounded-2xl"
-                animate={{
-                  scale: [1, 1.05, 1],
-                  opacity: [0.3, 0.6, 0.3]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-            </div>
-
-            {/* Notification Dot */}
-            <motion.div
-              className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-orange-400 to-red-500 rounded-full border-2 border-white shadow-lg flex items-center justify-center"
-              animate={{
-                scale: [1, 1.2, 1],
-                rotate: [0, 5, -5, 0]
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              <span className="text-white text-xs font-bold">!</span>
-            </motion.div>
 
             {/* Floating particles */}
             {[...Array(3)].map((_, i) => (
